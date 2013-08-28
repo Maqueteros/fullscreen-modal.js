@@ -21,8 +21,6 @@
         this.modal[fn]('click', close);
         $('body')[fn]('keyup', close);
 
-        return this;
-
       },
       close = function() {
 
@@ -31,7 +29,6 @@
 
           self.fadeOut(300, function() {
             keyup_enable = false;
-            self.find('.fsMessage').css('opacity', 0);
 
             if( fs_timeout ) {
               clearTimeout(fs_timeout);
@@ -45,8 +42,7 @@
             message = $('<p class="fsMessage">'+ options.message +'</p>').appendTo(modal);
 
         return {
-          modal: modal,
-          message: message
+          modal: modal
         };
       };
 
@@ -57,13 +53,7 @@
     $('input').blur();
 
     this.modal.fadeIn(300, function() {
-      self.message.css(
-          {
-            'margin-left': (self.message.width() / 2) * -1,
-            'opacity': '1'
-          }
-      );
-      
+
       if( self.options.autoclose ) {
         fs_timeout = setTimeout(self.close, fs_timeout_counter);
       }
