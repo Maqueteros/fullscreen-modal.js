@@ -23,15 +23,13 @@
 }
 
 .fsModalContainer .fsMessage {
-  position       : absolute;
-  left           : 50%;
+  position       : relative;
   top            : 50%;
   max-width      : 640px;
-  margin         : -20px 0 0 -320px;
+  margin         : -35px auto;
   color          : #fff;
   font-size      : 2em;
   font-family    : 'Helvetica Neue', Helvetica;
-  opacity        : 0;
 }
 
 .fsModalContainer.info {
@@ -48,4 +46,10 @@
 
 .fsModalContainer.error {
   background: #e74c3c !important;
+}
+
+@media only screen and (max-width: 480px) {
+  .fsModalContainer .fsMessage {
+    font-size: 1.25em;    
+  }  
 }

@@ -30,8 +30,7 @@
           var self = $('.fsModalContainer');
 
           self.fadeOut(300, function() {
-            keyup_enable = false;
-            self.find('.fsMessage').css('opacity', 0);
+            keyup_enable = false;            
 
             if( fs_timeout ) {
               clearTimeout(fs_timeout);
@@ -57,13 +56,7 @@
     $('input').blur();
 
     this.modal.fadeIn(300, function() {
-      self.message.css(
-          {
-            'margin-left': (self.message.width() / 2) * -1,
-            'opacity': '1'
-          }
-      );
-      
+
       if( self.options.autoclose ) {
         fs_timeout = setTimeout(self.close, fs_timeout_counter);
       }
