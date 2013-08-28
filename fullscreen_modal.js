@@ -21,8 +21,6 @@
         this.modal[fn]('click', close);
         $('body')[fn]('keyup', close);
 
-        return this;
-
       },
       close = function() {
 
@@ -44,8 +42,7 @@
             message = $('<p class="fsMessage">'+ options.message +'</p>').appendTo(modal);
 
         return {
-          modal: modal,
-          message: message
+          modal: modal
         };
       };
 
