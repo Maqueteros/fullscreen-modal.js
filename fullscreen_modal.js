@@ -30,7 +30,7 @@
           var self = $('.fsModalContainer');
 
           self.fadeOut(300, function() {
-            keyup_enable = false;            
+            keyup_enable = false;
 
             if( fs_timeout ) {
               clearTimeout(fs_timeout);
