@@ -5,24 +5,41 @@ body, html {
 	padding     : 0;
 	background  : #eee;
 	text-align  : center;
-	font-family : 'Helvetica Neue', Helvetica;
+	font-family : 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 h1 {
-	font-size : 3em;
-	margin    : 10px 0;
+	font-size : 2.4em;
+	margin    : 0;
 	padding   : 0;
 }
 
 p {
-	font-size : 1.5em;
-	max-width : 520px;
-	margin    : 20px auto;
+	font-size : 1.25em;
+	margin    : 45px auto;
+}
+
+header {
+	background: #6e83a7;
+	padding: 25px 0;
+	width: 100%;
+}
+
+header img {
+	margin: 0 auto;
+	display: block;
 }
 
 .options {
 	margin  : 20px 0;
-	display : inline-block;
+	padding: 0 0 40px 0;
+	display : block;
+}
+
+.container {
+	max-width: 480px;
+	padding: 20px;
+	margin: 20px auto;
 }
 
 .options a {
@@ -39,8 +56,16 @@ p {
 	transition         : background 0.3s ease-in-out;
 }
 
+.options a {
+	width: 15%;
+	display: inline-block;
+	float: left;
+	margin-left: 5%;
+}
+
 .options a:nth-child(1) {
 	background: #3498db;
+	margin: 0;
 }
 
 .options a:nth-child(2) {
@@ -60,10 +85,10 @@ p {
 }
 
 .credits {
-	max-width  : 520px;
 	margin     : 20px auto;
 	padding    : 10px 0;
 	border-top : 1px solid #ccc;
+	clear: both;
 }
 
 .credits a {

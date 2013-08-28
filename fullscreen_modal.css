@@ -34,6 +34,13 @@
   opacity        : 0;
 }
 
+.fsModalContainer.info,
+.fsModalContainer.success,
+.fsModalContainer.warning,
+.fsModalContainer.error {
+  opacity: .9;
+}
+
 .fsModalContainer.info {
   background: #3498db !important;
 }
