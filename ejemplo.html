@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fullscreen Modal</title>
+
+		<meta charset="utf-8" />
+
+		<link rel="stylesheet" href="fullscreen_modal.css" />
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+
+	<body>
+		<h1>FullscreenModal.js</h1>
+
+		<p>La verdad, hicimos éste <strong>Modal</strong> nomas porque sí, esperamos te guste.</p>
+
+		<div class="options">
+			<a href="" id="see-info">Información</a>
+			<a href="" id="see-success">Éxito</a>
+			<a href="" id="see-warning">Alerta</a>
+			<a href="" id="see-error">Error</a>
+		</div>
+
+		<div class="credits">
+			<a href="http://maqueteros.com">Maqueteros.com</a>
+		</div>
+
+		<script src="jquery-1.9.1.min.js"></script>
+		<script src="fullscreen_modal.js"></script>
+
+		<script>
+			var modal = new fsModal();
+
+			$('#see-info').on('click', function(event) {
+				event.preventDefault();
+
+				modal.setOptions({
+					message: 'Éste es un mensaje informativo.',
+					type: 'info'
+				});
+
+				modal.open();
+			});
+
+			$('#see-success').on('click', function(event) {
+				event.preventDefault();
+
+				modal.setOptions({
+					message: 'Éste es un mensaje de éxito.',
+					type: 'success'
+				});
+
+				modal.open();
+			});
+
+			$('#see-warning').on('click', function(event) {
+				event.preventDefault();
+
+				modal.setOptions({
+					message: 'Éste es un mensaje de alerta.',
+					type: 'warning'
+				});
+
+				modal.open();
+			});
+
+			$('#see-error').on('click', function(event) {
+				event.preventDefault();
+
+				modal.setOptions({
+					message: 'Éste es un mensaje de error y "autoclose" false.',
+					autoclose: false,
+					type: 'error'
+				});
+
+				modal.open();
+			});
+		</script>
+	</body>
+</html>
