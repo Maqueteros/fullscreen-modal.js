@@ -9,6 +9,8 @@
   cursor             : pointer;
   z-index            : 10000;
   text-align         : center;
+  box-sizing         : border-box;
+  padding            : 10px;
   -webkit-transition : background 0.3s ease-in-out;
   -moz-transition    : background 0.3s ease-in-out;
   -ms-transition     : background 0.3s ease-in-out;
@@ -29,7 +31,7 @@
   color          : #fff;
   font-size      : 2em;
   font-family    : 'Helvetica Neue', Helvetica;
-
+  opacity        : 0;
 }
 
 .fsModalContainer.info {

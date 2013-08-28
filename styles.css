@@ -60,7 +60,7 @@ p {
 }
 
 .credits {
-	width      : 520px;
+	max-width  : 520px;
 	margin     : 20px auto;
 	padding    : 10px 0;
 	border-top : 1px solid #ccc;

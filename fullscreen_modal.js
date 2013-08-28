@@ -12,7 +12,10 @@
           timeout   : 200
         }, options);
 
-        this.modal = create(this.options);
+        var elements = create(this.options);
+
+        this.modal = elements.modal;
+        this.message = elements.message;
 
         var fn = ($.fn.bind) ? 'bind' : 'on';
         this.modal[fn]('click', close);
@@ -28,6 +31,7 @@
 
           self.fadeOut(300, function() {
             keyup_enable = false;
+            self.find('.fsMessage').css('opacity', 0);
 
             if( fs_timeout ) {
               clearTimeout(fs_timeout);
@@ -37,10 +41,13 @@
 
       },
       create = function(options) {
-        var modal = $('<div class="fsModalContainer '+ options.type +'"></div>').appendTo('body');
-                    $('<p class="fsMessage">'+ options.message +'</p>').appendTo(modal);
+        var modal = $('<div class="fsModalContainer '+ options.type +'"></div>').appendTo('body'),
+            message = $('<p class="fsMessage">'+ options.message +'</p>').appendTo(modal);
 
-        return modal;
+        return {
+          modal: modal,
+          message: message
+        };
       };
 
   _fs_modal.prototype.open = function() {
@@ -50,6 +57,13 @@
     $('input').blur();
 
     this.modal.fadeIn(300, function() {
+      self.message.css(
+          {
+            'margin-left': (self.message.width() / 2) * -1,
+            'opacity': '1'
+          }
+      );
+      
       if( self.options.autoclose ) {
         fs_timeout = setTimeout(self.close, fs_timeout_counter);
       }
