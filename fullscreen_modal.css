@@ -24,8 +24,8 @@
   position       : absolute;
   left           : 50%;
   top            : 50%;
-  width          : 700px;
-  margin         : -20px 0 0 -350px;
+  max-width      : 640px;
+  margin         : -20px 0 0 -320px;
   color          : #fff;
   font-size      : 2em;
   font-family    : 'Helvetica Neue', Helvetica;

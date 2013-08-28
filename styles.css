@@ -16,7 +16,7 @@ h1 {
 
 p {
 	font-size : 1.5em;
-	width     : 520px;
+	max-width : 520px;
 	margin    : 20px auto;
 }
 
