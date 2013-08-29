@@ -102,7 +102,7 @@ header img {
 	text-decoration: underline;
 }
 
-@media (max-width:480px) {
+@media (max-width:520px) {
 
 	header {
 		padding: 20px 0;
