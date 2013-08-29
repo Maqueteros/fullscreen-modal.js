@@ -12,13 +12,14 @@
           timeout   : 200
         }, options);
 
-        this.modal = create(this.options);
+        var elements = create(this.options);
+
+        this.modal = elements.modal;
+        this.message = elements.message;
 
         var fn = ($.fn.bind) ? 'bind' : 'on';
         this.modal[fn]('click', close);
         $('body')[fn]('keyup', close);
-
-        return this;
 
       },
       close = function() {
@@ -37,10 +38,12 @@
 
       },
       create = function(options) {
-        var modal = $('<div class="fsModalContainer '+ options.type +'"></div>').appendTo('body');
-                    $('<p class="fsMessage">'+ options.message +'</p>').appendTo(modal);
+        var modal = $('<div class="fsModalContainer '+ options.type +'"></div>').appendTo('body'),
+            message = $('<p class="fsMessage">'+ options.message +'</p>').appendTo(modal);
 
-        return modal;
+        return {
+          modal: modal
+        };
       };
 
   _fs_modal.prototype.open = function() {
@@ -50,6 +53,7 @@
     $('input').blur();
 
     this.modal.fadeIn(300, function() {
+
       if( self.options.autoclose ) {
         fs_timeout = setTimeout(self.close, fs_timeout_counter);
       }

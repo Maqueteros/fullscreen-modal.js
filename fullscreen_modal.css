@@ -9,6 +9,8 @@
   cursor             : pointer;
   z-index            : 10000;
   text-align         : center;
+  box-sizing         : border-box;
+  padding            : 10px;
   -webkit-transition : background 0.3s ease-in-out;
   -moz-transition    : background 0.3s ease-in-out;
   -ms-transition     : background 0.3s ease-in-out;
@@ -21,15 +23,20 @@
 }
 
 .fsModalContainer .fsMessage {
-  position       : absolute;
-  left           : 50%;
+  position       : relative;
   top            : 50%;
-  width          : 700px;
-  margin         : -20px 0 0 -350px;
+  max-width      : 640px;
+  margin         : -35px auto;
   color          : #fff;
   font-size      : 2em;
   font-family    : 'Helvetica Neue', Helvetica;
+}
 
+.fsModalContainer.info,
+.fsModalContainer.success,
+.fsModalContainer.warning,
+.fsModalContainer.error {
+  opacity: .9;
 }
 
 .fsModalContainer.info {
@@ -46,4 +53,10 @@
 
 .fsModalContainer.error {
   background: #e74c3c !important;
+}
+
+@media only screen and (max-width: 480px) {
+  .fsModalContainer .fsMessage {
+    font-size: 1.25em;
+  }
 }
