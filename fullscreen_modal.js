@@ -12,12 +12,11 @@
           timeout   : 200
         }, options);
 
-        var elements = create(this.options);
+        var elements = create(this.options),
+            fn = ($.fn.bind) ? 'bind' : 'on';
 
         this.modal = elements.modal;
-        this.message = elements.message;
 
-        var fn = ($.fn.bind) ? 'bind' : 'on';
         this.modal[fn]('click', close);
         $('body')[fn]('keyup', close);
 
@@ -53,11 +52,9 @@
     $('input').blur();
 
     this.modal.fadeIn(300, function() {
-
       if( self.options.autoclose ) {
         fs_timeout = setTimeout(self.close, fs_timeout_counter);
       }
-
       keyup_enable = true;
     });
 
@@ -85,8 +82,6 @@
       if( options.autoclose === undefined ) {
         this.options.autoclose = true;
       }
-    } else if( this.options.autoclose ) {
-      fs_timeout = setTimeout(this.close, fs_timeout_counter);
     }
 
   };
