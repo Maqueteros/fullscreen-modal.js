@@ -108,6 +108,10 @@ header img {
 		padding: 20px 0;
 	}
 
+	header img {
+		width: 40px;
+	}
+
 	h1 {
 		font-size: 2em;
 	}
