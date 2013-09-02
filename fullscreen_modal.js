@@ -41,7 +41,7 @@
             cancel_button    = $('.fsCancelButton', modal),
             middle_container = $('.fsModalMiddle', modal);
 
-        modal.unbind('click').css('cursor', 'default').addClass('confirm');
+        modal.unbind('click').addClass('confirm');
         $('body').unbind('keyup');
 
         if( ! message.length ) {
@@ -61,15 +61,14 @@
       create_alert = function() {
 
         var self  = this,
-            alert = $('.fsMessage', modal);
+            alert =  $('.fsMessage', modal);
 
         modal[fn]('click', close);
-        $('body')[fn]('keyup', self.close);
+        $('body')[fn]('keyup', close);
 
         if( ! alert.length ) {
-          alert = $('<p class="fsMessage"></p>').find('.fsModalMiddle').appendTo(modal);
+          alert = $('<p class="fsMessage">' + self.options.message + '</p>').appendTo(modal.find('.fsModalMiddle'));
         }
-        alert.html(self.options.message);
 
         return alert;
 

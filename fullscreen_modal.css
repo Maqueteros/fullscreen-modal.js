@@ -54,7 +54,8 @@
 }
 
 .fsModalContainer.confirm {
-  background: #eee !important;
+  background : #eee !important;
+  cursor     : default !important;
 }
 
 .fsModalContainer.confirm .fsMessage {
@@ -114,8 +115,8 @@
 
 @media only screen and (max-width: 480px) {
   .fsModalContainer .fsMessage {
-    font-size: 1.25em;
-    margin: 0;
+    font-size : 1.25em;
+    margin    : 0;
   }
 
   .fsModalContainer .fsButtonsContainer {
