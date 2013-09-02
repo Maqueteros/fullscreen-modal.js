@@ -50,8 +50,8 @@
 
         if( ! confirm_button.length ) {
           buttons_container = $('<div class="fsButtonsContainer"></div>').appendTo(middle_container);
-          confirm_button    = $('<button class="button fsConfirmButton">Confirmar</button>').appendTo(buttons_container);
           cancel_button     = $('<button class="button fsCancelButton">Cancelar</button>').appendTo(buttons_container);
+          confirm_button    = $('<button class="button fsConfirmButton">Confirmar</button>').appendTo(buttons_container);
         }
 
         confirm_button[fn]('click', $.proxy(self.confirm_trigger, self));
