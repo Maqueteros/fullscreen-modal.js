@@ -50,6 +50,10 @@ header img {
 	text-decoration    : none;
 	color              : #fff;
 	font-size          : 0.85em;
+	width              : 18.4%;
+	display            : inline-block;
+	float              : left;
+	margin-left        : 2%;
 	-webkit-transition : background 0.3s ease-in-out;
 	-moz-transition    : background 0.3s ease-in-out;
 	-ms-transition     : background 0.3s ease-in-out;
@@ -57,16 +61,9 @@ header img {
 	transition         : background 0.3s ease-in-out;
 }
 
-.options a {
-	width: 21.2532%;
-	display: inline-block;
-	float: left;
-	margin-left: 5%;
-}
-
 .options a:nth-child(1) {
-	background: #3498db;
-	margin-left: 0;
+	background  : #3498db;
+	margin-left : 0;
 }
 
 .options a:nth-child(2) {
@@ -79,6 +76,10 @@ header img {
 
 .options a:nth-child(4) {
 	background: #e74c3c;
+}
+
+.options a:nth-child(5) {
+	background: #aaa;
 }
 
 .options a:hover {

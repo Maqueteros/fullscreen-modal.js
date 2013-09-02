@@ -9,8 +9,8 @@
   cursor             : pointer;
   z-index            : 10000;
   text-align         : center;
+  opacity            : 0.98;
   box-sizing         : border-box;
-  padding            : 10px;
   -webkit-transition : background 0.3s ease-in-out;
   -moz-transition    : background 0.3s ease-in-out;
   -ms-transition     : background 0.3s ease-in-out;
@@ -22,21 +22,19 @@
   box-sizing: border-box;
 }
 
-.fsModalContainer .fsMessage {
-  position       : relative;
-  top            : 50%;
-  max-width      : 640px;
-  margin         : -35px auto;
-  color          : #fff;
-  font-size      : 2em;
-  font-family    : 'Helvetica Neue', Helvetica;
+.fsModalContainer .fsModalMiddle {
+  position : relative;
+  top      : 50%;
+  margin   : -100px auto;
 }
 
-.fsModalContainer.info,
-.fsModalContainer.success,
-.fsModalContainer.warning,
-.fsModalContainer.error {
-  opacity: .9;
+.fsModalContainer .fsMessage {
+  color       : #fff;
+  font-size   : 1.5em;
+  font-family : 'Helvetica Neue', Helvetica;
+  max-width   : 640px;
+  padding     : 10px;
+  margin      : 10px auto;
 }
 
 .fsModalContainer.info {
@@ -55,8 +53,76 @@
   background: #e74c3c !important;
 }
 
+.fsModalContainer.confirm {
+  background: #eee !important;
+}
+
+.fsModalContainer.confirm .fsMessage {
+  color: #333 !important;
+}
+
+.fsModalContainer .fsButtonsContainer {
+  margin  : 15px 0;
+  /*background : rgba(0, 0, 0, 0.1);*/
+}
+
+.fsModalContainer.confirm .fsButtonsContainer .button {
+  -webkit-border-radius : 5px;
+  -moz-border-radius    : 5px;
+  -ms-border-radius     : 5px;
+  -o-border-radius      : 5px;
+  border-radius         : 5px;
+}
+
+.fsModalContainer.confirm .fsButtonsContainer .fsConfirmButton {
+  background-color: #2ecc71 !important;
+}
+
+.fsModalContainer.confirm .fsButtonsContainer .fsCancelButton {
+  background-color: #333 !important;
+}
+
+.fsButtonsContainer .button {
+  padding            : 15px 30px;
+  border             : none;
+  background         : none;
+  color              : #fff;
+  font-size          : 0.85em;
+  cursor             : pointer;
+  margin             : 0;
+  background         : rgba(0, 0, 0, 0.3);
+  margin-right       : 10px;
+  -webkit-transition : background 0.3s ease-in-out;
+  -moz-transition    : background 0.3s ease-in-out;
+  -ms-transition     : background 0.3s ease-in-out;
+  -o-transition      : background 0.3s ease-in-out;
+  transition         : background 0.3s ease-in-out;
+}
+
+.fsButtonsContainer .button:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.fsModalContainer .form {
+  padding: 10px;
+}
+
+.fsModalContainer .form .ui {
+  border  : none;
+  padding : 10px;
+}
+
 @media only screen and (max-width: 480px) {
   .fsModalContainer .fsMessage {
     font-size: 1.25em;
+    margin: 0;
+  }
+
+  .fsModalContainer .fsButtonsContainer {
+    margin: 5px 0;
+  }
+
+  .fsButtonsContainer .button {
+    font-size: 0.75em;
   }
 }

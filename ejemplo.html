@@ -24,8 +24,9 @@
 			<div class="options">
 				<a href="" id="see-info">Información</a>
 				<a href="" id="see-success">Éxito</a>
-				<a href="" id="see-warning">Alerta</a>
+				<a href="" id="see-warning">Advertencia</a>
 				<a href="" id="see-error">Error</a>
+				<a href="" id="see-confirm">Confirmar</a>
 			</div>
 
 
@@ -45,9 +46,8 @@
 				modal.setOptions({
 					message: 'Éste es un mensaje informativo.',
 					type: 'info'
-				});
+				}).open();
 
-				modal.open();
 			});
 
 			$('#see-success').on('click', function(event) {
@@ -56,9 +56,8 @@
 				modal.setOptions({
 					message: 'Éste es un mensaje de éxito.',
 					type: 'success'
-				});
+				}).open();
 
-				modal.open();
 			});
 
 			$('#see-warning').on('click', function(event) {
@@ -67,21 +66,35 @@
 				modal.setOptions({
 					message: 'Éste es un mensaje de alerta.',
 					type: 'warning'
-				});
+				}).open();
 
-				modal.open();
 			});
 
 			$('#see-error').on('click', function(event) {
 				event.preventDefault();
 
 				modal.setOptions({
-					message: 'Éste es un mensaje de error y "autoclose" false.',
+					message: 'Éste es un mensaje de error con "autoclose" false.',
 					autoclose: false,
 					type: 'error'
-				});
+				}).open();
 
-				modal.open();
+			});
+
+			$('#see-confirm').on('click', function(event) {
+				event.preventDefault();
+
+				modal.setOptions({
+					message   : 'Éste es un confirm, presiona el botón "Confirmar" para correr un callback o "Cancelar" para cerrar.',
+					modalType : 'confirm',
+					confirmCallback  : function() {
+						alert('Éxito!!');
+					},
+					cancelCallback : function() {
+						alert('Cancelado!!');
+					}
+				}).open();
+
 			});
 		</script>
 	</body>
